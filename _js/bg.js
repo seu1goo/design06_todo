@@ -21,12 +21,15 @@ function getBg() {
   const monthBg = todayDate.getMonth() + 1;
 
   if (3 <= monthBg && monthBg < 6) {
-    bg1.style.backgroundImage = "url('../_img/01.jpg')";
-    bg2.style.backgroundImage = "url('../_img/02.jpg')";
-    bg3.style.backgroundImage = "url('../_img/03.jpg')";
-    bg4.style.backgroundImage = "url('../_img/04.jpg')";
-    bg5.style.backgroundImage = "url('../_img/05.jpg')";
-    bg6.style.backgroundImage = "url('../_img/06.jpg')";
+    bg1.style.backgroundImage =
+      "url('https://github.com/seu1goo/design06_todo/blob/master/_img/01.jpg?raw=true')";
+    bg2.style.backgroundImage =
+      "url('https://github.com/seu1goo/design06_todo/blob/master/_img/02.jpg?raw=true')";
+    bg3.style.backgroundImage =
+      "url('https://github.com/seu1goo/design06_todo/blob/master/_img/03.jpg?raw=true')";
+    bg4.style.backgroundImage = "url('./_img/04.jpg')";
+    bg5.style.backgroundImage = "url('./_img/05.jpg')";
+    bg6.style.backgroundImage = "url('./_img/06.jpg')";
     bg7.style.backgroundImage = "url('../_img/07.jpg')";
     bg8.style.backgroundImage = "url('../_img/08.jpg')";
   } else if (6 <= monthBg && monthBg < 9) {
@@ -39,7 +42,8 @@ function getBg() {
     bg7.style.backgroundImage = "url('../_img/15.jpg')";
     bg8.style.backgroundImage = "url('../_img/16.jpg')";
   } else if (9 <= monthBg && monthBg < 12) {
-    bg1.style.backgroundImage = "url('../_img/17.jpg')";
+    bg1.style.backgroundImage =
+      "url('https://github.com/seu1goo/design06_todo/blob/master/_img/17.jpg?raw=true')";
     bg2.style.backgroundImage = "url('../_img/18.jpg')";
     bg3.style.backgroundImage = "url('../_img/19.jpg')";
     bg4.style.backgroundImage = "url('../_img/20.jpg')";
