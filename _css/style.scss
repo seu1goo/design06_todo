@@ -1,0 +1,527 @@
+@charset "utf-8";
+
+/* common */
+html {
+  font-family: "Rajdhani", "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-size: 2rem;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+// swiper
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+// contents
+#contents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 85%;
+  background-color: #fff;
+  box-sizing: border-box;
+  opacity: 0.95;
+
+  #left-area {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding: 2em;
+    text-align: center;
+    box-sizing: border-box;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 95%;
+      height: 95%;
+      padding: 2em;
+      border: 2px solid #ccc;
+      box-sizing: border-box;
+    }
+    > div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      #time {
+        width: 100%;
+        margin: 3em 0em;
+        font-size: 2.2rem;
+        font-weight: 500;
+
+        #date {
+          margin-bottom: 0.5em;
+        }
+
+        #clock {
+          font-size: 6rem;
+        }
+      }
+      #weather {
+        width: 100%;
+
+        #num {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2rem;
+          font-weight: 500;
+
+          #name {
+            margin-right: 0.5em;
+          }
+        }
+      }
+    }
+  }
+
+  #right-area {
+    position: relative;
+    width: 50%;
+    height: 100%;
+
+    #user {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+
+      .login-title {
+        margin-bottom: 0.5em;
+        font-size: 3rem;
+        font-weight: 500;
+        text-align: center;
+        color: #fff;
+      }
+
+      #login-form {
+        width: 100%;
+        padding: 1.5em;
+        box-sizing: border-box;
+        font-size: 2rem;
+
+        .login {
+          width: 100%;
+          height: 3em;
+          margin-right: 1%;
+          margin-bottom: 1em;
+          padding: 0.7em;
+          border: none;
+          outline: none;
+          box-sizing: border-box;
+          font-size: 1.6rem;
+        }
+
+        .sm {
+          display: block;
+          width: 100%;
+          height: 3em;
+          padding: 0.7em;
+          border: 2px solid #eee;
+          outline: none;
+          background-color: #eee;
+          box-sizing: border-box;
+          font-size: 1.6rem;
+          color: #fe7d31;
+          cursor: pointer;
+          transition: all 0.4s;
+
+          &:hover {
+            background-color: transparent;
+            border-color: #fff;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    #todo {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 1.5em;
+      box-sizing: border-box;
+      color: #fff;
+
+      #greeting {
+        margin-bottom: 1em;
+        font-size: 3rem;
+        font-size: 500;
+        text-align: center;
+      }
+
+      #todo-form {
+        width: 100%;
+
+        input {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 2em;
+          margin-bottom: 1.5em;
+          background-color: transparent;
+          border: none;
+          border-bottom: 2px solid #f4f4f4;
+          outline: none;
+          box-sizing: border-box;
+          font-size: 2rem;
+          color: #f4f4f4;
+
+          &::placeholder {
+            font-family: "Rajdhani", "Noto Sans KR", sans-serif;
+            color: #f4f4f4;
+          }
+        }
+      }
+
+      #todo-list {
+        width: 100%;
+        height: 70%;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+          height: 15px;
+          background-color: #999;
+          border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: #eee;
+        }
+
+        li {
+          position: relative;
+          width: 93%;
+          height: 2em;
+          margin-bottom: 0.5em;
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0.5em;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 1px;
+            border-bottom: 2px dotted #fff;
+            opacity: 0.7;
+            transition: all 0.4s;
+          }
+
+          button {
+            position: absolute;
+            right: 0;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 1.7rem;
+            line-height: 0.8;
+            color: #fff;
+            opacity: 0.7;
+            transition: all 0.2s;
+            cursor: pointer;
+            &:hover,
+            &:focus {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      #quote {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5em;
+        box-sizing: border-box;
+
+        span {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 0.5em;
+          text-align: center;
+          word-break: keep-all;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1499px) {
+  #contents {
+    width: 85%;
+    #left-area {
+      &:after {
+        width: 89%;
+        height: 93%;
+      }
+      > div {
+        #time {
+          #clock {
+            font-size: 4.8rem;
+          }
+        }
+      }
+    }
+    #right-area {
+      #user {
+        .login-title {
+          font-size: 2.6rem;
+        }
+        #login-form {
+          padding: 0.6em;
+        }
+      }
+      #todo {
+        #greeting {
+          font-size: 2.2rem;
+        }
+        #todo-form {
+          input {
+            font-size: 1.8rem;
+          }
+        }
+        #todo-list {
+          li {
+            font-size: 1.6rem;
+            button {
+              .fa-times {
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+      #quote {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #contents {
+    width: 90%;
+    height: 90%;
+    #left-area {
+      &:after {
+        width: 89%;
+        height: 93%;
+      }
+      > div {
+        #time {
+          #date {
+            font-size: 1.8rem;
+          }
+          #clock {
+            font-size: 4rem;
+          }
+        }
+        #weather {
+          #city {
+            font-size: 1.6rem;
+          }
+          #num {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+    #right-area {
+      #user {
+        width: 80%;
+        .login-title {
+          font-size: 2.4rem;
+        }
+        #login-form {
+          padding: 0.6em;
+        }
+      }
+      #todo {
+        #greeting {
+          font-size: 2.2rem;
+        }
+        #todo-form {
+          input {
+            font-size: 1.8rem;
+          }
+        }
+        #todo-list {
+          li {
+            font-size: 1.6rem;
+            button {
+              .fa-times {
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+      #quote {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+  #contents {
+    width: 90%;
+    height: 90%;
+    #left-area {
+      &:after {
+        width: 89%;
+        height: 93%;
+      }
+      > div {
+        #time {
+          #date {
+            font-size: 1.8rem;
+          }
+          #clock {
+            font-size: 3.4rem;
+          }
+        }
+        #weather {
+          #city {
+            font-size: 1.6rem;
+          }
+          #num {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+    #right-area {
+      #user {
+        width: 92%;
+        .login-title {
+          font-size: 2rem;
+        }
+        #login-form {
+          padding: 0.3em;
+        }
+      }
+      #todo {
+        #greeting {
+          font-size: 2.2rem;
+        }
+        #todo-form {
+          input {
+            font-size: 1.8rem;
+          }
+        }
+        #todo-list {
+          li {
+            font-size: 1.6rem;
+            button {
+              .fa-times {
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+      #quote {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #contents {
+    width: 90%;
+    height: 90%;
+    #left-area {
+      width: 100%;
+      height: 50%;
+      padding: 0.5em;
+      &:after {
+        width: 92%;
+        height: 92%;
+        padding: 0.5em;
+      }
+      > div {
+        #time {
+          margin: 1em 0 2em;
+          #date {
+            font-size: 1.8rem;
+          }
+          #clock {
+            font-size: 3.6rem;
+          }
+        }
+        #weather {
+          #city {
+            margin-bottom: -1em;
+            font-size: 1.6rem;
+          }
+          #num {
+            margin-top: -1em;
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+    #right-area {
+      width: 100%;
+      height: 50%;
+      #user {
+        .login-title {
+          font-size: 2.6rem;
+        }
+        #login-form {
+          padding: 0.8em;
+        }
+      }
+      #todo {
+        #greeting {
+          margin-bottom: 0.5em;
+          font-size: 2.4rem;
+        }
+        #todo-form {
+          input {
+            font-size: 1.8rem;
+          }
+        }
+        #todo-list {
+          height: 40%;
+          font-size: 1.7rem;
+        }
+        #quote {
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+}
