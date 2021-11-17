@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo App</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="/style.78d7ab67.css">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- js -->
+  <script defer="" src="/bg.b87179ff.js"></script>
+  <script defer="" src="/greetings.89c03154.js"></script>
+  <script defer="" src="/clock.bb949448.js"></script>
+  <script defer="" src="/weather.2a460f71.js"></script>
+  <script defer="" src="/quotes.45434860.js"></script>
+  <script defer="" src="/todo.bf648f4c.js"></script>
+
+  <!-- fontAwesome -->
+  <script defer="" src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous">
+  </script>
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script src="/style.78d7ab67.js"></script></head>
+
+<body>
+  <section id="bg" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide bg1"></div>
+      <div class="swiper-slide bg2"></div>
+      <div class="swiper-slide bg3"></div>
+      <div class="swiper-slide bg4"></div>
+      <div class="swiper-slide bg5"></div>
+      <div class="swiper-slide bg6"></div>
+      <div class="swiper-slide bg7"></div>
+      <div class="swiper-slide bg8"></div>
+    </div>
+  </section>
+  <!-- bg -->
+
+  <div id="contents">
+    <section id="left-area">
+      <div>
+        <article id="time">
+          <h2 id="date">날짜</h2>
+          <h3 id="clock">00:00:00</h3>
+        </article>
+        <!-- time -->
+        <article id="weather">
+          <div id="city"></div>
+          <div id="icon"></div>
+          <div id="num">
+            <span id="name"></span>
+            <span id="temperature"></span>
+          </div>
+        </article>
+        <!-- weather -->
+      </div>
+    </section>
+    <section id="right-area">
+      <article id="user" class="hidden">
+        <h1 class="login-title">What your name?</h1>
+        <form id="login-form">
+          <input class="login" required="" maxlength="15" type="text" placeholder="Write name">
+          <input class="sm" type="submit" value="Login">
+        </form>
+      </article>
+      <!-- user -->
+      <article id="todo" class="hidden">
+        <h1 id="greeting"></h1>
+        <form id="todo-form">
+          <input type="text" placeholder="Write a To Do and Press">
+        </form>
+        <ul id="todo-list">
+        </ul>
+        <div id="quote">
+          <span></span>
+          <span></span>
+        </div>
+      </article>
+      <!-- todo -->
+    </section>
+  </div>
+</body>
+
+</html>

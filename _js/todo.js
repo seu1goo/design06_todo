@@ -24,12 +24,53 @@ function paintTodo(newToDo) {
   const span = document.createElement("span");
   span.innerText = newToDo.text;
 
-  const button = document.createElement("button");
-  button.innerText = "✖";
-  button.addEventListener("click", deleteTodo);
+  const editBtn = document.createElement("button");
+  editBtn.classList.add("edit");
+  editBtn.innerText = "EDIT";
+  editBtn.addEventListener("click", () => {
+    edit.classList.remove("hidden");
+    span.classList.add("hidden");
+    editBtn.classList.add("hidden");
+    editOk.classList.remove("hidden");
+    edit.value = span.innerText;
+  });
 
+  const editOk = document.createElement("button");
+  editOk.classList.add("hidden", "editOk");
+  editOk.innerText = "OK";
+  editOk.addEventListener("click", () => {
+    edit.classList.add("hidden");
+    span.classList.remove("hidden");
+    editBtn.classList.remove("hidden");
+    editOk.classList.add("hidden");
+    span.innerText = edit.value;
+    localStorage.removeItem("todos");
+    let toDos = [{ id: li.id, text: edit.value }];
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+  });
+
+  const edit = document.createElement("input");
+  edit.classList.add("hidden");
+  edit.value = span.innerText;
+
+  const checkTodo = document.createElement("button");
+  checkTodo.classList.add("check");
+  checkTodo.innerText = "✔";
+  checkTodo.addEventListener("click", () => {
+    span.classList.toggle("line");
+  });
+
+  const deleteList = document.createElement("button");
+  deleteList.classList.add("delete");
+  deleteList.innerText = "✖";
+  deleteList.addEventListener("click", deleteTodo);
+
+  li.appendChild(editBtn);
+  li.appendChild(editOk);
+  li.appendChild(edit);
   li.appendChild(span);
-  li.appendChild(button);
+  li.appendChild(checkTodo);
+  li.appendChild(deleteList);
   toDoList.appendChild(li);
 }
 
